@@ -1,0 +1,14 @@
+.container {
+    height: 100vh;
+}
+.flex_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* align-items needs assign height*/
+}
+
+.flex_item {
+    margin: 10px;
+}
