@@ -1,5 +1,7 @@
 import React from 'react'
 import styles from './movie.module.css'
+import { trackPromise } from 'react-promise-tracker';
+
 
 class Movie extends React.Component {
     constructor(props) {
@@ -25,11 +27,16 @@ class Movie extends React.Component {
         alert("Error in fetching");
     }
 
+    addDefaultSrc(event) {
+        event.target.src = "../error.jpg"
+    }
+
 
     componentDidMount() {
         const imdbID = sessionStorage.getItem('imdbID');
         const APIkey = sessionStorage.getItem("APIkey"); // for maintainability
         let url = "http://www.omdbapi.com/?plot=full&apikey=" + APIkey + "&i=" + imdbID;
+        trackPromise(
         fetch(url).
             then(this._OnReady).
             then((json) => {
@@ -45,28 +52,27 @@ class Movie extends React.Component {
                     director: json['Director'],
                     runtime: json['Runtime']
                 })
-            }).catch(this._Error)
+            }).catch(this._Error));
 
     }
     render() {
         return (
         <div className={styles.container}>
-            <div className={styles.flex_container}><img src={this.state.poster} height="600" width="600" /></div>
-            <div className={styles.flex_container}>
-                <div className={styles.flex_item}><h2>{this.state.title}</h2></div>
-                <div className={styles.flex_item}>
-                    <header>
-                        <span>Rating: {this.state.rating}</span>
-                        <span>IMDB Votes: {this.state.votes}</span>
+            <div className={styles.infoContainer}>
+                <div className={styles.flex_container_img}><img className={styles.imgprop} src={this.state.poster} onError={this.addDefaultSrc} /></div>
+                <div className={styles.flex_container_info}>
+                    <div className={styles.flex_item_head}>{this.state.title}</div>
+                    <div className={styles.flex_item_info}>
+                        <span>Rating: {this.state.rating} </span>
+                        <span>IMDB Votes: {this.state.votes} </span>
                         <span>Genre: {this.state.genre}</span>
                         <span>Director: {this.state.director}</span>
                         <span>Actors: {this.state.actors}</span>
                         <span>Runtime: {this.state.runtime}</span>
-                    </header>
+                    </div>
                 </div>
-                <div className={styles.flex_item}><section>{this.state.plot}</section></div>
             </div>
-            
+            <div className={styles.flex_item_plot}><section>{this.state.plot}</section></div>
         </div>
         )
     }

@@ -6,13 +6,19 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
-    height: 100%; /* align-items needs assign height*/
-    width: 100%;
+    justify-content: center;
+    height: 100vh; /* align-items needs assign height*/
+    width: 100vw;
    flex-wrap: wrap;
 }
 
 .flex_item {
     margin: 10px;
-    width: 20%;
+    width: 20vw;
+    height: 20vh;
+}
+
+.imgprop {
+    width: 100%;
+    height: 100%
 }

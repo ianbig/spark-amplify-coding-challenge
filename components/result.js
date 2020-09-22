@@ -2,6 +2,7 @@ import React from 'react';
 import ResultBar from './resultBar'
 import ResultImg from './resultImg'
 import NumberBar from './numberBar'
+import { trackPromise } from 'react-promise-tracker';
 
 
 class Result extends React.Component {
@@ -26,14 +27,13 @@ class Result extends React.Component {
         return response.json();
     }
   
-
-  
     _OnError() {
-        alert("Error in fetching");
+        window.location.href = '/error';
     }
 
     componentDidMount() {
         const url = sessionStorage.getItem("url");
+        trackPromise(
         fetch(url).then(this._OnResponse).
         then(json => {
             // console.log(json);
@@ -45,7 +45,7 @@ class Result extends React.Component {
                 "type": sessionStorage.getItem("type")
             })
         }).
-        catch(this._OnError);
+        catch(this._OnError))
         // use arrow function in setState to avoid this become undefined
         
     }
@@ -56,7 +56,7 @@ class Result extends React.Component {
         // console.log(this.state.page);
         let url = sessionStorage.getItem('url');
         url = url + "&page=" + num;
-
+        
         fetch(url).then(this._OnResponse).
         then(json => {
             //console.log(url);

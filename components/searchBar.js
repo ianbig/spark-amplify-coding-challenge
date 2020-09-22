@@ -22,8 +22,8 @@ class SearchBar extends React.Component {
         const title = this.state.Title;
         const year = this.state.Year;
         const type = this.state.Type;
-        const url = 'http://www.omdbapi.com/?' + 'apikey=' + APIkey + '&' + 'type=' + type + '&' + 
-        's=' + title;
+        const url = 'http://www.omdbapi.com/?' + 'apikey=' + APIkey + '&type=' + type + '&' + 
+        's=' + title + "&y=" + year;
         sessionStorage.setItem('url', url);
         sessionStorage.setItem("title", title);
         sessionStorage.setItem("year", year);
@@ -70,7 +70,9 @@ class SearchBar extends React.Component {
                                 </select>
                         </div>
                         <div className={styles.flex_item}>
-                            <button type="submit">Submit</button>
+                            <label htmlFor="submit">
+                                <button name="submit" type="submit">Submit</button>
+                            </label>
                         </div>
                     </form>             
             </div>

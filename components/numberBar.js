@@ -1,5 +1,7 @@
 import React from 'react'
 
+
+
 class NumberBar extends React.Component {
     constructor(props) {
         super(props);
@@ -32,12 +34,13 @@ class NumberBar extends React.Component {
         let event = e || window.event;
         let code = event.keyCode || event.which || event.charCode;
         if (code === 13) { //enter
-            if (isNaN(value)) { //isNaN() 不是一个数字返回true
+            if (isNaN(value)) {
                 alert('Please input number')
-            } else if(value > pageTotal || value === null || value.trim() === '') { //使用trim()去掉空格，全为空格的字符串不为''也不为null
+            } else if(value > pageTotal || value === null || value.trim() === '') { 
                 alert('Please input valid page number')
             } else {
-                this.goToPage(parseInt(value, 10)) //输入了合法页码，调用跳转页面方法。
+                window.location.hash = `#${value}`;
+                this.goToPage(parseInt(value, 10)) //input valid number
             }
         }
     }
@@ -54,9 +57,15 @@ class NumberBar extends React.Component {
             <div>
                 <a href="####" onClick={()=> this.goToPage(this.state.currentPage-1)}> pre </a>
                 <span>
-                    <input type="text" value={this.props.currentPage} onChange={this.changePageNum} onKeyUp={(event) => this.handleKeyUp(event, pageTotal)}/>/{pageTotal}
+                <input type="text" onChange={this.changePageNum} onKeyUp={(event) => this.handleKeyUp(event, pageTotal)}/> / {pageTotal}
                 </span>
                 <a href="####" onClick={()=> this.goToPage(this.state.currentPage+1)}> next </a>
+                <style jsx>{`
+                    input {
+                        width: 2vw;
+                        height: 2vh;
+                    }
+                `}</style>
             </div>      
         )
     }

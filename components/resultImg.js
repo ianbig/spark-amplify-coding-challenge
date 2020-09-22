@@ -13,16 +13,23 @@ class ResultImg extends React.Component {
         //console.log(imdbID);
         window.location.href = '/movieDetail'; // standrd way to change page
     }
+
+    addDefaultSrc(event) {
+        event.target.src = "../error.jpg"
+    }
     /**
      * UNDO: Exception handle to no image
      * UNDO: CSS size of flex-item
-     * UNDO: Action after click the flex-item
+     * UNDO: Keep the Current Page
      */
     render() {
         const movies = this.props.result;
         //console.log(movies);
-    const listItems = movies.map((movie) => <div key={movie.imdbID} id={movie.imdbID} className={styles.flex_item} onClick={this.handleClick}>
-                                                <img src={movie.Poster} width="200" height="300" />
+        if(!movies) {
+            window.location.href = '/error';
+        } 
+        const listItems = movies.map((movie) => <div key={movie.imdbID} id={movie.imdbID} className={styles.flex_item} onClick={this.handleClick}>
+                                                <img src={movie.Poster} className={styles.imgprop} onError={this.addDefaultSrc}/>
                                                 <div>{movie.Title}</div>
                                             </div>);
         return <div className={styles.container}>
