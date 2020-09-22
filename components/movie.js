@@ -35,7 +35,7 @@ class Movie extends React.Component {
     componentDidMount() {
         const imdbID = sessionStorage.getItem('imdbID');
         const APIkey = sessionStorage.getItem("APIkey"); // for maintainability
-        let url = "http://www.omdbapi.com/?plot=full&apikey=" + APIkey + "&i=" + imdbID;
+        let url = "https://www.omdbapi.com/?plot=full&apikey=" + APIkey + "&i=" + imdbID;
         trackPromise(
         fetch(url).
             then(this._OnReady).
