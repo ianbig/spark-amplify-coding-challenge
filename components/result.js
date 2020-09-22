@@ -17,7 +17,6 @@ class Result extends React.Component {
             page: 1,
             pageSize: 10
         }
-        this.handleNumClick = this.handleNumClick.bind(this);
         this.handleMovClick = this.handleMovClick.bind(this);
     }
 
@@ -33,6 +32,7 @@ class Result extends React.Component {
 
     componentDidMount() {
         const url = sessionStorage.getItem("url");
+        
         trackPromise(
         fetch(url).then(this._OnResponse).
         then(json => {
@@ -49,8 +49,6 @@ class Result extends React.Component {
         // use arrow function in setState to avoid this become undefined
         
     }
-
-    handleNumClick() {}
 
     handleMovClick(num) {
         // console.log(this.state.page);

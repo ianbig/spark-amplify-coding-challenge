@@ -22,7 +22,7 @@ class SearchBar extends React.Component {
         const title = this.state.Title;
         const year = this.state.Year;
         const type = this.state.Type;
-        const url = 'http://www.omdbapi.com/?' + 'apikey=' + APIkey + '&type=' + type + '&' + 
+        const url = 'https://www.omdbapi.com/?' + 'apikey=' + APIkey + '&type=' + type + '&' + 
         's=' + title + "&y=" + year;
         sessionStorage.setItem('url', url);
         sessionStorage.setItem("title", title);
