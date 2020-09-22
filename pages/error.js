@@ -7,7 +7,9 @@ export default function Error() {
                 <title>Error Page</title>
             </Head>
             <main>
+                <header></header>
                 <h1>Some Error Occur Back to <a href="/">Search Page</a></h1>
+                <footer></footer>
             </main>
         </div>
     )

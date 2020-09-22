@@ -31,10 +31,21 @@ export default function MovieDetail() {
             </Head>
             <main className={styles.main}>
                 <LoadingIndicator />
-                <header className={styles.header}><a href='/resultPage'>back</a></header>
+                <header>
+                    <a href="/"><img src="https://i.ibb.co/nMs3GBm/homepage.png" alt="loupe" border="0" className="link" /></a>
+                </header>
                 <Movie />
                 <footer className={styles.footer}>Copyrighy(c) Example.com. All right reserved.</footer>
             </main>
+            <style jsx>{`
+                .link {
+                    width: 10vw;
+                    height: 10vh;
+                    margin:0;
+                    text-decoration: none; 
+                    color: black;
+                }
+            `}</style>
         </div>
     )
 }

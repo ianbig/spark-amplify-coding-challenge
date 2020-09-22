@@ -29,11 +29,20 @@ export default function ResultPage() {
                 <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
             </Head>
             <main>
-                <header><a href="/">Search Page</a></header>
+                <header><a href="/"><img className="link" src="https://i.ibb.co/VqTmhdB/arrow.png" alt="arrow" border="0" /></a></header>
                 <LoadingIndicator />
                 <Result />
                 <footer></footer>
             </main>
+            <style jsx>{`
+                .link {
+                    width: 10vw;
+                    height: 10vh;
+                    margin:0;
+                    text-decoration: none; 
+                    color: black;
+                }
+            `}</style>
         </div>
     )
 }

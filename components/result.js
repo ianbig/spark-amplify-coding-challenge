@@ -74,6 +74,7 @@ class Result extends React.Component {
     render() {
         return (
             <div>
+                <h3>Current page: {this.state.page}</h3>
                 <ResultBar number={this.state.numberOfResult}  type={this.state.type} title={this.state.title} year={this.state.year}/>
                 <ResultImg result={this.state.result} />
                 <NumberBar currentPage={this.state.page} total={this.state.numberOfResult} goToPage={(num)=> this.handleMovClick(num)}/>

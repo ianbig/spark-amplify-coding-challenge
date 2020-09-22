@@ -10,14 +10,14 @@ body {
 }
 
 header {
-    background-color: lightgray;
+    background-color: powderblue;
     min-height: 10vh;
     min-width: 100vw;
     font-size: 3em;
 }
 
 footer{
-    background-color: lightgray;
+    background-color: powderblue;
     min-height: 10vh;
     min-width: 100vw;
     position: relative;
