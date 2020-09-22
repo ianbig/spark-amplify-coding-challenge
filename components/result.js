@@ -59,7 +59,7 @@ class Result extends React.Component {
 
         fetch(url).then(this._OnResponse).
         then(json => {
-            console.log(url);
+            //console.log(url);
             this.setState({
                 "result": json["Search"],
                 "page": num

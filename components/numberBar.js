@@ -33,9 +33,9 @@ class NumberBar extends React.Component {
         let code = event.keyCode || event.which || event.charCode;
         if (code === 13) { //enter
             if (isNaN(value)) { //isNaN() 不是一个数字返回true
-                alert('请输入数字！')
+                alert('Please input number')
             } else if(value > pageTotal || value === null || value.trim() === '') { //使用trim()去掉空格，全为空格的字符串不为''也不为null
-                alert('请输入合法的页码')
+                alert('Please input valid page number')
             } else {
                 this.goToPage(parseInt(value, 10)) //输入了合法页码，调用跳转页面方法。
             }

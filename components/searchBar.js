@@ -27,6 +27,7 @@ class SearchBar extends React.Component {
         sessionStorage.setItem('url', url);
         sessionStorage.setItem("title", title);
         sessionStorage.setItem("year", year);
+        sessionStorage.setItem('APIkey', APIkey);
         sessionStorage.setItem("type", type);
         //console.log(url);
         window.location.href = "/resultPage";
