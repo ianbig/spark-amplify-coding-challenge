@@ -41,7 +41,7 @@ export default function MovieDetail() {
                 .link {
                     width: 10vw;
                     height: 10vh;
-                    margin:0;
+                    margin:.3em;
                     text-decoration: none; 
                     color: black;
                 }

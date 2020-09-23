@@ -29,7 +29,7 @@ export default function ResultPage() {
                 <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
             </Head>
             <main>
-                <header><a href="/"><img className="link" src="https://i.ibb.co/VqTmhdB/arrow.png" alt="arrow" border="0" /></a></header>
+                <header><a href="/"><img className="link" src="https://i.ibb.co/nMs3GBm/homepage.png" alt="arrow" border="0" /></a></header>
                 <LoadingIndicator />
                 <Result />
                 <footer></footer>
@@ -38,7 +38,7 @@ export default function ResultPage() {
                 .link {
                     width: 10vw;
                     height: 10vh;
-                    margin:0;
+                    margin: .3em;
                     text-decoration: none; 
                     color: black;
                 }
