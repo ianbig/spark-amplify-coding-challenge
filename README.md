@@ -16,7 +16,7 @@
 $ git clone https://github.com/ianbig/spark-amplify-coding-challenge.git
 $ npm install package.json
 # do this if you want to run on localhost
-$ npm run dev
+$ npx next start -p 4000
 ```
 
 - Access to [https://spark-amplify-coding-challenge-deploy.vercel.app/](https://spark-amplify-coding-challenge-deploy.vercel.app/) for viewing online host
