@@ -69,9 +69,6 @@ $ npm run dev
 - Test on real device instead of Google Chrome developer tools
 
 ## Development log
-
----
-
 - Learn React ( 10 hours )
 - Build Website ( 30 hours )
 - Write document ( 2hours )
