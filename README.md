@@ -2,8 +2,6 @@
 
 ## Development Environment
 
----
-
 - Machine: Macbook Pro ( 13-inch, 2017, Two Thunderbolt 3 ports )
 - Operating System: macOS Catalina
 - Processor: 2.3 GHz Dual-Core Intel Core i5
